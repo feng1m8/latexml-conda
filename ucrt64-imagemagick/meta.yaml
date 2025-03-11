@@ -1,0 +1,42 @@
+{% set name = "ucrt64-imagemagick" %}
+{% set version = "7.1.1.44" %}
+
+package:
+  name: {{ name }}
+  version: {{ version }}
+
+source:
+  url: https://mirror.msys2.org/mingw/ucrt64/mingw-w64-ucrt-x86_64-imagemagick-{{ version }}-1-any.pkg.tar.zst
+  sha256: 068f5e204e47d0e500e7ea1c7a787ae61d7b7684cffbc18ed50193ecca97f401
+
+build:
+  number: 0
+  script: python %RECIPE_DIR%/build.py
+  skip: true  # [not win]
+
+requirements:
+  build:
+    - delvewheel
+  run:
+    - bzip2
+    - fftw
+    - fontconfig
+    - freetype
+    - lcms2
+    - libintl
+    - libpng
+    - libxml2
+    - libzlib
+    - mingw-w64-ucrt-x86_64-libwinpthread-git
+    - mingw-w64-ucrt-x86_64-gcc-libs
+    - ucrt64-liblqr
+    - ucrt64-libltdl
+    - ucrt64-libraqm
+
+about:
+  home: https://www.imagemagick.org/
+  summary: An image viewing/manipulation program (mingw-w64)
+  license: ImageMagick
+  license_file:
+    - ucrt64/share/licenses/imagemagick/LICENSE
+    - ucrt64/share/licenses/imagemagick/NOTICE
