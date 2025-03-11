@@ -1,0 +1,27 @@
+{% set name = "ucrt64-liblqr" %}
+{% set version = "0.4.3" %}
+
+package:
+  name: {{ name }}
+  version: {{ version }}
+
+source:
+  url: https://mirror.msys2.org/mingw/ucrt64/mingw-w64-ucrt-x86_64-liblqr-{{ version }}-1-any.pkg.tar.zst
+  sha256: 3be455815c4c0894bff2f81ae084191d20d2f09b7f9a15c00254b550a8e0969a
+
+build:
+  number: 0
+  skip: true  # [not win]
+  script: python %RECIPE_DIR%/build.py
+
+requirements:
+  build:
+    - delvewheel
+  run:
+    - libglib
+    - libintl
+
+about:
+  home: https://liblqr.wikidot.com/
+  summary: A seam-carving C/C++ library called Liquid Rescale (mingw-w64)
+  license: LGPL-2.1-or-later OR GPL-2.1-or-later
