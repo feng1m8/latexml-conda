@@ -1,0 +1,37 @@
+name: Build
+
+run-name: Build ${{ github.event.inputs.package }}
+
+on:
+  workflow_dispatch:
+    inputs:
+      package:
+        description: 'Package Name'
+        required: true
+        type: string
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - run: rmdir /s /q C:\Strawberry
+        shell: cmd
+
+      - uses: conda-incubator/setup-miniconda@v3
+        with:
+          auto-activate-base: true
+          activate-environment: ""
+          miniforge-version: latest
+          channels: conda-forge
+          conda-remove-defaults: "true"
+
+      - run: conda install conda-build --yes
+
+      - run: conda build ${{ github.event.inputs.package }}
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ${{ github.event.inputs.package }}
+          path: C:/Users/runneradmin/miniconda3/conda-bld/win-64/*.conda
