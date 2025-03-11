@@ -1,0 +1,26 @@
+{% set name = "perl-db_file" %}
+{% set version = "1.855" %}
+
+package:
+  name: {{ name }}
+  version: {{ version }}
+
+build:
+  number: 0
+  skip: true  # [not win]
+  script: python %RECIPE_DIR%/build.py
+
+requirements:
+  build:
+    - delvewheel
+  host:
+    - perl 5.32
+  run:
+    - perl 5.32
+    - libdb 6.2
+
+about:
+  home: https://metacpan.org/pod/DB_File
+  license: Artistic-1.0-Perl OR GPL-1.0-or-later
+  summary: DB_File is a module which allows Perl programs to make use of the facilities provided by Berkeley DB
+  dev_url: https://github.com/pmqs/DB_File
