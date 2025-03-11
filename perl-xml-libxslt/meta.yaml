@@ -1,0 +1,37 @@
+{% set name = "perl-xml-libxslt" %}
+{% set version = "2.003000" %}
+
+package:
+  name: {{ name }}
+  version: {{ version }}
+
+source:
+  - url: https://cpan.metacpan.org/authors/id/S/SH/SHLOMIF/XML-LibXSLT-{{ version }}.tar.gz
+    sha256: 7caa5aee72f53be59d8b84eecb6864a07c612a12ea6b27d5c706960edcd54587
+  - url: https://mirror.msys2.org/mingw/mingw64/mingw-w64-x86_64-libxslt-1.1.42-1-any.pkg.tar.zst
+    sha256: 8898ddc779ab8d6af90d83990051874fec0002ededfd8c2c8b29bccde31c579d
+
+build:
+  number: 0
+  skip: true  # [not win]
+
+requirements:
+  build:
+    - m2w64-gcc
+    - make
+  host:
+    - perl 5.32
+    - m2w64-libxml2
+    - m2w64-gcc-libs
+    - mingw-w64-ucrt-x86_64-crt-git
+  run:
+    - perl 5.32
+    - perl-xml-libxml
+    - m2w64-libxml2
+    - m2w64-gcc-libs
+
+about:
+  home: https://metacpan.org/pod/XML::LibXSLT
+  license: perl_5
+  license_file: LICENSE
+  summary: 'Interface to GNOME libxslt library'
