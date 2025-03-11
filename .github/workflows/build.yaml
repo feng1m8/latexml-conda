@@ -24,7 +24,7 @@ jobs:
           auto-activate-base: true
           activate-environment: ""
           miniforge-version: latest
-          channels: conda-forge
+          channels: conda-forge,feng1m8
           conda-remove-defaults: "true"
 
       - run: conda install conda-build --yes
