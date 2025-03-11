@@ -1,0 +1,29 @@
+{% set name = "ucrt64-libraqm" %}
+{% set version = "0.10.2" %}
+
+package:
+  name: {{ name }}
+  version: {{ version }}
+
+source:
+  url: https://mirror.msys2.org/mingw/ucrt64/mingw-w64-ucrt-x86_64-libraqm-{{ version }}-1-any.pkg.tar.zst
+  sha256: d33d9ee5915b7e0b28cab8357173f4bdc50cabc3d470a7e296c2796535b170ef
+
+build:
+  number: 0
+  skip: true  # [not win]
+  script: python %RECIPE_DIR%/build.py
+
+requirements:
+  build:
+    - delvewheel
+  run:
+    - freetype
+    - fribidi
+    - harfbuzz
+
+about:
+  home: https://github.com/HOST-Oman/libraqm
+  summary: A library that encapsulates the logic for complex text layout (mingw-w64)
+  license: MIT
+  license_file: ucrt64/share/licenses/libraqm/LICENSE
