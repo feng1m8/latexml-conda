@@ -1,0 +1,30 @@
+{% set name = "perl-image-magick" %}
+{% set version = "7.1.1" %}
+
+package:
+  name: {{ name }}
+  version: {{ version }}
+
+source:
+  url: https://cpan.metacpan.org/authors/id/J/JC/JCRISTY/Image-Magick-{{ version }}-28.tar.gz
+  sha256: bc54137346c1d45626e7075015f7d1dae813394af885457499f54878cfc19e0b
+
+build:
+  number: 0
+  skip: true  # [not win]
+
+requirements:
+  build:
+    - m2w64-gcc
+    - make
+  host:
+    - perl 5.32
+    - ucrt64-imagemagick
+  run:
+    - perl 5.32
+    - ucrt64-imagemagick
+
+about:
+  home: https://metacpan.org/pod/Image::Magick
+  license: unknown
+  summary: objected-oriented Perl interface to ImageMagick. Use it to read, manipulate, or write an image or image sequence from within a Perl script.
