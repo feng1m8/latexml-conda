@@ -16,6 +16,7 @@ build:
 requirements:
   build:
     - make
+    - symlink-exe-build
   host:
     - perl 5.32
   run:
