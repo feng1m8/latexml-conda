@@ -22,6 +22,7 @@ requirements:
     - fftw
     - fontconfig
     - freetype
+    - ghostscript
     - lcms2
     - libintl
     - libpng

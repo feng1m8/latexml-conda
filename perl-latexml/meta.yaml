@@ -20,6 +20,7 @@ requirements:
     - perl 5.32
   run:
     - perl
+    - perl-db_file
     - perl-image-magick
     - perl-image-size
     - perl-xml-libxml
