@@ -1,12 +1,16 @@
 name: Build
 
-run-name: Build ${{ github.event.inputs.package }}
+run-name: Build ${{ github.event.inputs.package }} ${{ github.event.inputs.version }}
 
 on:
   workflow_dispatch:
     inputs:
       package:
         description: 'Package Name'
+        required: true
+        type: string
+      version:
+        description: 'Package Version'
         required: true
         type: string
 
@@ -33,5 +37,5 @@ jobs:
 
       - uses: actions/upload-artifact@v4
         with:
-          name: ${{ github.event.inputs.package }}
+          name: ${{ github.event.inputs.package }}-${{ github.event.inputs.version }}
           path: C:/Users/runneradmin/miniconda3/conda-bld/win-64/*.conda
