@@ -26,5 +26,8 @@ requirements:
 
 about:
   home: https://metacpan.org/pod/Image::Magick
-  license: unknown
-  summary: objected-oriented Perl interface to ImageMagick. Use it to read, manipulate, or write an image or image sequence from within a Perl script.
+  summary: Objected-oriented Perl interface to ImageMagick. Use it to read, manipulate, or write an image or image sequence from within a Perl script.
+  license: ImageMagick
+  license_file:
+    - {{ LIBRARY_PREFIX }}/ucrt64/share/licenses/imagemagick/LICENSE
+    - {{ LIBRARY_PREFIX }}/ucrt64/share/licenses/imagemagick/NOTICE

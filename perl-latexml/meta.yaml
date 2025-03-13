@@ -30,7 +30,7 @@ requirements:
 
 about:
   home: https://metacpan.org/pod/LaTeXML
-  license: open_source
-  license_file: LICENSE
   summary: A converter that transforms TeX and LaTeX into XML/HTML/MathML
+  license: NIST-PD-fallback
+  license_file: LICENSE
   dev_url: https://github.com/brucemiller/LaTeXML

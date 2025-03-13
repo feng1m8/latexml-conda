@@ -6,8 +6,10 @@ package:
   version: {{ version }}
 
 source:
-  url: https://mirror.msys2.org/mingw/ucrt64/mingw-w64-ucrt-x86_64-liblqr-{{ version }}-1-any.pkg.tar.zst
-  sha256: 3be455815c4c0894bff2f81ae084191d20d2f09b7f9a15c00254b550a8e0969a
+  - url: https://mirror.msys2.org/mingw/ucrt64/mingw-w64-ucrt-x86_64-liblqr-{{ version }}-1-any.pkg.tar.zst
+    sha256: 3be455815c4c0894bff2f81ae084191d20d2f09b7f9a15c00254b550a8e0969a
+  - url: https://github.com/carlobaldassi/liblqr/archive/refs/tags/v{{ version }}.tar.gz
+    sha256: 64b0c4ac76d39cca79501b3f53544af3fc5f72b536ac0f28d2928319bfab6def 
 
 build:
   number: 0
@@ -24,4 +26,7 @@ requirements:
 about:
   home: https://liblqr.wikidot.com/
   summary: A seam-carving C/C++ library called Liquid Rescale (mingw-w64)
-  license: LGPL-2.1-or-later OR GPL-2.1-or-later
+  license: LGPL-3.0-or-later OR GPL-3.0-or-later
+  license_file:
+    - COPYING
+    - COPYING.LESSER

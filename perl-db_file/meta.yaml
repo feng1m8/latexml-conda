@@ -21,6 +21,8 @@ requirements:
 
 about:
   home: https://metacpan.org/pod/DB_File
-  license: Artistic-1.0-Perl OR GPL-1.0-or-later
   summary: DB_File is a module which allows Perl programs to make use of the facilities provided by Berkeley DB
+  license: Artistic-1.0-Perl OR GPL-1.0-or-later
+  license_file:
+    - {{ LIBRARY_PREFIX }}/lib/Software/License/Perl_5.pm
   dev_url: https://github.com/pmqs/DB_File

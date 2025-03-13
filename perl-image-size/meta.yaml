@@ -23,5 +23,8 @@ requirements:
 
 about:
   home: http://search.cpan.org/dist/Image-Size
-  license: perl_5
   summary: 'A library to extract height/width from images'
+  license: Artistic-2.0 OR LGPL-2.1-or-later
+  license_file:
+    - {{ LIBRARY_PREFIX }}/lib/Software/License/Artistic_2_0.pm
+    - {{ LIBRARY_PREFIX }}/lib/Software/License/LGPL_2_1.pm
