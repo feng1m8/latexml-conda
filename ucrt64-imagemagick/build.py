@@ -31,3 +31,4 @@ for i in (library / 'ucrt64').rglob('*.dll'):
 
 txt = Path(library / 'ucrt64' / 'etc' / 'ImageMagick-7' / 'delegates.xml')
 txt.write_text(txt.read_text().replace('gswin32c', 'gswin64c'))
+txt.write_text(txt.read_text().replace('&apos;', '&quot;'))

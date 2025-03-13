@@ -1,13 +1,13 @@
 {% set name = "ucrt64-imagemagick" %}
-{% set version = "7.1.1.41" %}
+{% set version = "7.1.1.45" %}
 
 package:
   name: {{ name }}
   version: {{ version }}
 
 source:
-  url: https://mirror.msys2.org/mingw/ucrt64/mingw-w64-ucrt-x86_64-imagemagick-{{ version }}-2-any.pkg.tar.zst
-  sha256: a15a1ce40029f1c02df508b443d8b1b35d941df65dfcd7dbcdd10ccd16297985
+  url: https://mirror.msys2.org/mingw/ucrt64/mingw-w64-ucrt-x86_64-imagemagick-{{ version }}-1-any.pkg.tar.zst
+  sha256: a476e753beae2c3fa9661dcf6c3ee4636fab97a3a9b32b95a84e12a1eaaa6997
 
 build:
   number: 0
