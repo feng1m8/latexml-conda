@@ -8,11 +8,11 @@ package:
 source:
   - url: https://cpan.metacpan.org/authors/id/S/SH/SHLOMIF/XML-LibXSLT-{{ version }}.tar.gz
     sha256: 7caa5aee72f53be59d8b84eecb6864a07c612a12ea6b27d5c706960edcd54587
-  - url: https://mirror.msys2.org/mingw/mingw64/mingw-w64-x86_64-libxslt-1.1.42-1-any.pkg.tar.zst
-    sha256: 8898ddc779ab8d6af90d83990051874fec0002ededfd8c2c8b29bccde31c579d
+  - url: https://mirror.msys2.org/mingw/mingw64/mingw-w64-x86_64-libxslt-1.1.43-1-any.pkg.tar.zst
+    sha256: 50a6d39bfcea03732a15fdd595c89e903b9131d32d2d23dd213ea5a9962ab186
 
 build:
-  number: 0
+  number: 1
   skip: true  # [not win]
 
 requirements:
