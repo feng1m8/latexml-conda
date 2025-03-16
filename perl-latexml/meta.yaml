@@ -10,7 +10,7 @@ source:
   sha256: 7d2bbe2ce252baf86ba3f388cd0dec3aa4838f49d612b9ec7cc4ff88105badcc
 
 build:
-  number: 0
+  number: 1
   skip: true  # [not win]
 
 requirements:
@@ -25,7 +25,6 @@ requirements:
     - perl-image-size
     - perl-xml-libxml
     - perl-xml-libxslt
-    - miktex
 
 about:
   home: https://metacpan.org/pod/LaTeXML
