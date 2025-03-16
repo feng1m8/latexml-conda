@@ -15,10 +15,9 @@ build:
 
 requirements:
   build:
+    - perl 5.32
     - make
     - symlink-exe-build
-  host:
-    - perl 5.32
   run:
     - perl
     - perl-db_file

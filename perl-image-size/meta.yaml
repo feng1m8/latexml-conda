@@ -15,9 +15,8 @@ build:
 
 requirements:
   build:
-    - make
-  host:
     - perl 5.32
+    - make
   run:
     - perl
 
@@ -26,5 +25,5 @@ about:
   summary: 'A library to extract height/width from images'
   license: Artistic-2.0 OR LGPL-2.1-or-later
   license_file:
-    - {{ LIBRARY_PREFIX }}/lib/Software/License/Artistic_2_0.pm
-    - {{ LIBRARY_PREFIX }}/lib/Software/License/LGPL_2_1.pm
+    - {{ BUILD_PREFIX }}/Library/lib/Software/License/Artistic_2_0.pm
+    - {{ BUILD_PREFIX }}/Library/lib/Software/License/LGPL_2_1.pm
