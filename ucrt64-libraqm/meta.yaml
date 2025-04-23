@@ -10,7 +10,7 @@ source:
   sha256: d33d9ee5915b7e0b28cab8357173f4bdc50cabc3d470a7e296c2796535b170ef
 
 build:
-  number: 0
+  number: 1
   skip: true  # [not win]
   script: python %RECIPE_DIR%/build.py
 
@@ -18,7 +18,7 @@ requirements:
   build:
     - delvewheel
   run:
-    - freetype
+    - libfreetype6
     - fribidi
     - harfbuzz
 
