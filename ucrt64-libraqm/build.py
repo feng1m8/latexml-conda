@@ -18,6 +18,4 @@ dll_utils.replace_needed(
         'libharfbuzz-0.dll': 'harfbuzz.dll',
     },
     strip=False,
-    verbose=2,
-    test=[],
 )

@@ -17,6 +17,4 @@ dll_utils.replace_needed(
         'libdb-6.2__.dll': 'libdb62.dll',
     },
     strip=False,
-    verbose=2,
-    test=[],
 )

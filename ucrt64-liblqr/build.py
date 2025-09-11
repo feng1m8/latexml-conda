@@ -17,6 +17,4 @@ dll_utils.replace_needed(
         'libintl-8.dll': 'intl-8.dll',
     },
     strip=False,
-    verbose=2,
-    test=[],
 )
