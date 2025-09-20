@@ -20,22 +20,20 @@ jobs:
     steps:
       - uses: actions/checkout@v5
 
-      - run: rmdir /s /q C:\Strawberry
-        shell: cmd
-
       - uses: conda-incubator/setup-miniconda@v3
         with:
           auto-activate-base: true
           activate-environment: ""
-          miniforge-version: latest
           channels: conda-forge,feng1m8
           conda-remove-defaults: "true"
 
       - run: conda install conda-build --yes
+
+      - run: python .github/workflows/prebuild.py
 
       - run: conda build ${{ github.event.inputs.package }}
 
       - uses: actions/upload-artifact@v4
         with:
           name: ${{ github.event.inputs.package }}-${{ github.event.inputs.version }}
-          path: C:/Users/runneradmin/miniconda3/conda-bld/win-64/*.conda
+          path: C:/Miniconda/conda-bld/win-64/*.conda
