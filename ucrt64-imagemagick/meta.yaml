@@ -28,7 +28,7 @@ requirements:
     - libpng
     - libxml2-16
     - libzlib
-    - mingw-w64-ucrt-x86_64-libwinpthread-git
+    - mingw-w64-ucrt-x86_64-libwinpthread
     - mingw-w64-ucrt-x86_64-gcc-libs
     - ucrt64-liblqr
     - ucrt64-libltdl

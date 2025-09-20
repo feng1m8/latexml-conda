@@ -26,8 +26,7 @@ jobs:
           activate-environment: ""
           channels: conda-forge,feng1m8
           conda-remove-defaults: "true"
-
-      - run: conda install conda-build --yes
+          conda-build-version: "*"
 
       - run: python .github/workflows/prebuild.py
 

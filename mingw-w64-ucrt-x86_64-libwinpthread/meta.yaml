@@ -1,0 +1,26 @@
+{% set name = "mingw-w64-ucrt-x86_64-libwinpthread" %}
+{% set version = "13.0.0.r167.g2e31630bc" %}
+
+package:
+  name: {{ name }}
+  version: {{ version }}
+
+source:
+  url: https://mirror.msys2.org/mingw/ucrt64/{{ name }}-{{ version }}-1-any.pkg.tar.zst
+  sha256: c87dfa707810a7db2ecfc8aed1a80078da192f2b6808ac41319dfa1c46cc1807
+
+build:
+  number: 0
+  skip: true  # [not win]
+  script: python %RECIPE_DIR%/build.py
+
+requirements:
+  build:
+    - delvewheel
+
+about:
+  home: https://www.mingw-w64.org/
+  summary: MinGW-w64 winpthreads library (mingw-w64)
+  license: MIT
+  license_file:
+    - ucrt64/share/licenses/libwinpthread/COPYING
