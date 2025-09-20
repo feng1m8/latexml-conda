@@ -1,5 +1,5 @@
 {% set name = "ucrt64-libraqm" %}
-{% set version = "0.10.2" %}
+{% set version = "0.10.3" %}
 
 package:
   name: {{ name }}
@@ -7,10 +7,10 @@ package:
 
 source:
   url: https://mirror.msys2.org/mingw/ucrt64/mingw-w64-ucrt-x86_64-libraqm-{{ version }}-1-any.pkg.tar.zst
-  sha256: d33d9ee5915b7e0b28cab8357173f4bdc50cabc3d470a7e296c2796535b170ef
+  sha256: da4ca3f917e11c95b036dc06cc8a59a5ea6df6ffea8553f63e83ac7630ca1911
 
 build:
-  number: 1
+  number: 0
   skip: true  # [not win]
   script: python %RECIPE_DIR%/build.py
 
