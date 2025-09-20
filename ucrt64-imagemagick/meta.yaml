@@ -6,8 +6,8 @@ package:
   version: {{ version }}
 
 source:
-  url: https://mirror.msys2.org/mingw/ucrt64/mingw-w64-ucrt-x86_64-imagemagick-{{ version }}-1-any.pkg.tar.zst
-  sha256: 6d7b04cc29f58a3fe69c60ca3d47fb7055707fac99dd8eb1c4a5477b3638e365
+  url: https://mirror.msys2.org/mingw/ucrt64/mingw-w64-ucrt-x86_64-imagemagick-{{ version }}-2-any.pkg.tar.zst
+  sha256: e48b98a02d53cae9d918756120c6bc2bd354c5c2415f3f42c3e48373a61b2148
 
 build:
   number: 0
