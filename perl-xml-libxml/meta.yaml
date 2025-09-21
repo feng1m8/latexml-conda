@@ -10,7 +10,7 @@ source:
   sha256: a29bf3f00ab9c9ee04218154e0afc8f799bf23674eb99c1a9ed4de1f4059a48d
 
 build:
-  number: 0
+  number: 1
   skip: true  # [not win]
 
 requirements:
@@ -22,10 +22,13 @@ requirements:
     - m2w64-libxml2
   run:
     - perl 5.32
-    - m2w64-libxml2
 
 about:
   home: https://bitbucket.org/shlomif/perl-xml-libxml
-  summary: 'Interface to Gnome libxml2 xml parsing and DOM library'
+  summary: Interface to Gnome libxml2 xml parsing and DOM library.
   license: Artistic-1.0-Perl OR GPL-1.0-or-later
-  license_file: LICENSE
+  license_file: 
+    - LICENSE
+    - {{ LIBRARY_PREFIX }}/mingw-w64/share/licenses/libxml2/COPYING
+    - {{ LIBRARY_PREFIX }}/mingw-w64/share/licenses/libiconv/COPYING.LIB
+    - {{ LIBRARY_PREFIX }}/mingw-w64/share/licenses/zlib/LICENSE
