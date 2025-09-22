@@ -1,16 +1,18 @@
 {% set name = "ucrt64-imagemagick" %}
-{% set version = "7.1.2.3" %}
+{% set version = "7.1.1.47" %}
+{% set build = "2" %}
 
 package:
   name: {{ name }}
   version: {{ version }}
 
 source:
-  url: https://mirror.msys2.org/mingw/ucrt64/mingw-w64-ucrt-x86_64-imagemagick-{{ version }}-2-any.pkg.tar.zst
-  sha256: e48b98a02d53cae9d918756120c6bc2bd354c5c2415f3f42c3e48373a61b2148
+  url: https://mirror.msys2.org/mingw/ucrt64/mingw-w64-ucrt-x86_64-imagemagick-{{ version }}-{{ build }}-any.pkg.tar.zst
+  sha256: 29509996182a07dc67c753abbe6cd792831480846e5f047926a2f69e710df65b
 
 build:
   number: 0
+  string: {{ build }}_{{ PKG_BUILDNUM }}
   skip: true  # [not win]
   script: python %RECIPE_DIR%/build.py
 
@@ -28,15 +30,15 @@ requirements:
     - libpng
     - libxml2-16
     - libzlib
-    - mingw-w64-ucrt-x86_64-libwinpthread
-    - mingw-w64-ucrt-x86_64-gcc-libs
+    - libwinpthread
+    - libgcc
     - ucrt64-liblqr
     - ucrt64-libltdl
     - ucrt64-libraqm
 
 about:
-  home: https://www.imagemagick.org/
-  summary: An image viewing/manipulation program (mingw-w64)
+  home: http://www.imagemagick.org/
+  summary: Software suite to create, edit, compose, or convert bitmap images.
   license: ImageMagick
   license_file:
     - ucrt64/share/licenses/imagemagick/LICENSE

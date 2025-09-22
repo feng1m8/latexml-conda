@@ -12,7 +12,7 @@ shutil.copytree(src / 'ucrt64', library / 'ucrt64')
 for i in (library / 'ucrt64').rglob('*.dll'):
     dll_utils.replace_needed(
         i,
-        ['libbz2-1.dll', 'libfftw3-3.dll', 'libfontconfig-1.dll', 'libfreetype-6.dll', 'libintl-8.dll', 'liblcms2-2.dll', 'libxml2-16.dll', 'zlib1.dll', 'libpng16-16.dll'],
+        ['libbz2-1.dll', 'libfftw3-3.dll', 'libfontconfig-1.dll', 'libfreetype-6.dll', 'libintl-8.dll', 'liblcms2-2.dll', 'libxml2-2.dll', 'zlib1.dll', 'libpng16-16.dll'],
         {
             'libbz2-1.dll': 'libbz2.dll',
             'libfftw3-3.dll': 'fftw3.dll',
@@ -20,7 +20,7 @@ for i in (library / 'ucrt64').rglob('*.dll'):
             'libfreetype-6.dll': 'freetype.dll',
             'libintl-8.dll': 'intl-8.dll',
             'liblcms2-2.dll': 'lcms2.dll',
-            'libxml2-16.dll': 'libxml2.dll',
+            'libxml2-2.dll': 'libxml2.dll',
             'zlib1.dll': 'zlib.dll',
             'libpng16-16.dll': 'libpng16.dll',
         },

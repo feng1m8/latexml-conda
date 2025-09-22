@@ -6,13 +6,11 @@ package:
   version: {{ version }}
 
 source:
-  - url: https://cpan.metacpan.org/authors/id/S/SH/SHLOMIF/XML-LibXSLT-{{ version }}.tar.gz
-    sha256: 7caa5aee72f53be59d8b84eecb6864a07c612a12ea6b27d5c706960edcd54587
-  - url: https://mirror.msys2.org/mingw/mingw64/mingw-w64-x86_64-libxslt-1.1.43-1-any.pkg.tar.zst
-    sha256: 50a6d39bfcea03732a15fdd595c89e903b9131d32d2d23dd213ea5a9962ab186
+  url: https://cpan.metacpan.org/authors/id/S/SH/SHLOMIF/XML-LibXSLT-{{ version }}.tar.gz
+  sha256: 7caa5aee72f53be59d8b84eecb6864a07c612a12ea6b27d5c706960edcd54587
 
 build:
-  number: 1
+  number: 2
   skip: true  # [not win]
 
 requirements:
@@ -21,19 +19,20 @@ requirements:
     - make
   host:
     - perl 5.32
+    - mingw64-libxslt
     - m2w64-libxml2
-    - m2w64-gcc-libs
     - mingw-w64-ucrt-x86_64-crt-git
   run:
     - perl 5.32
     - perl-xml-libxml
-    - m2w64-libxml2
-    - m2w64-gcc-libs
 
 about:
   home: https://metacpan.org/pod/XML::LibXSLT
-  summary: 'Interface to GNOME libxslt library'
-  license: (Artistic-1.0-Perl OR GPL-1.0-or-later) AND MIT
+  summary: Interface to GNOME libxslt library
+  license: Artistic-1.0-Perl OR GPL-1.0-or-later
   license_file:
     - LICENSE
     - {{ LIBRARY_PREFIX }}/lib/Software/License/MIT.pm
+    - {{ LIBRARY_PREFIX }}/mingw-w64/share/licenses/libxml2/COPYING
+    - {{ LIBRARY_PREFIX }}/mingw-w64/share/licenses/libiconv/COPYING.LIB
+    - {{ LIBRARY_PREFIX }}/mingw-w64/share/licenses/zlib/LICENSE

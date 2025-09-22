@@ -1,0 +1,38 @@
+{% set name = "mingw64-libxslt" %}
+{% set version = "1.1.43" %}
+{% set build = "1" %}
+
+package:
+  name: {{ name }}
+  version: {{ version }}
+
+source:
+  - url: https://mirror.msys2.org/mingw/mingw64/mingw-w64-x86_64-libxslt-{{ version }}-{{ build }}-any.pkg.tar.zst
+    sha256: 50a6d39bfcea03732a15fdd595c89e903b9131d32d2d23dd213ea5a9962ab186
+  - url: https://download.gnome.org/sources/libxslt/1.1/libxslt-{{ version }}.tar.xz
+    sha256: 5a3d6b383ca5afc235b171118e90f5ff6aa27e9fea3303065231a6d403f0183a
+
+build:
+  number: 0
+  string: {{ build }}_{{ PKG_BUILDNUM }}
+  skip: true  # [not win]
+
+requirements:
+  run:
+    - m2w64-libxml2
+    - m2w64-gcc-libs
+
+about:
+  home: https://gitlab.gnome.org/GNOME/libxslt
+  summary: The XSLT C library developed for the GNOME project
+  license: MIT
+  license_file:
+    - Copyright
+  doc_url: https://gitlab.gnome.org/GNOME/libxslt/-/wikis
+  doc_source_url: https://github.com/GNOME/libxslt/tree/master/doc
+  description: |
+    Libxslt is the XSLT C library developed for the GNOME project.
+    XSLT itself is a an XML language to define transformation for XML.
+    Libxslt is based on libxml2-devel the XML C library developed for the GNOME project.
+    It also implements most of the EXSLT set of processor-portable extensions functions
+    and some of Saxon's evaluate and expressions extensions.
